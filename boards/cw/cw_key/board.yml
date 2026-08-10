@@ -6,6 +6,8 @@ board:
   name: cw_key
   socs:
     - name: nrf52840
+      variants:
+      - name: zmk
 
 # If your board has multiple revisions, specify them here. See
 # https://docs.zephyrproject.org/4.1.0/hardware/porting/board_porting.html#multiple-board-revisions
