@@ -19,4 +19,4 @@
 #
 ---
 include:
-  - board: cw-key//zmk
+  - board: cw_key//zmk
