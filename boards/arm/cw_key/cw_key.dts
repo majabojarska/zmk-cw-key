@@ -5,7 +5,7 @@
 
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
-// #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/zmk/matrix_transform.h>
 
 #include "cw_key-pinctrl.dtsi"
 #include "cw_key-layouts.dtsi"
@@ -18,9 +18,9 @@
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
+        zmk,physical-layout = &default_layout;
         // Uncomment this if you enabled one of the "vddh" nodes below.
         // zmk,battery = &vbatt;
-        // zmk,physical-layout = &default_layout;
     };
 
     kscan: kscan {
@@ -35,18 +35,12 @@
             ;
     };
 
-    // default_transform: default_transform {
-    //     // See https://zmk.dev/docs/development/hardware-integration/new-shield#matrix-transform
-    //     // for how to configure this
-    //     compatible = "zmk,matrix-transform";
-    //     columns = <2>;
-    //     rows = <1>;
-
-    //     map = <
-    //         RC(0, 0) RC(0, 1)
-    //         RC(1, 0) RC(1, 1)
-    //     >;
-    // };
+    default_transform: default_transform {
+        compatible = "zmk,matrix-transform";
+        columns = <2>;
+        rows = <1>;
+        map = <RC(0, 0) RC(0, 1)>;
+    };
 
     leds {
         compatible = "gpio-leds";
