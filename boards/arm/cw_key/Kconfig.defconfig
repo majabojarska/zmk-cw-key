@@ -4,9 +4,6 @@
 
 if BOARD_CW_KEY
 
-config SOC_NRF52840_QIAA
-    default y
-
 config ZMK_KEYBOARD_NAME
     default "cw-key"
 
